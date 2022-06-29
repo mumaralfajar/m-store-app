@@ -9,17 +9,19 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back_ios_new,
-            color: Colors.black,
+            color: Colors.white,
           ),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: const CupertinoSearchTextField(),
+        title: const CupertinoSearchTextField(
+          backgroundColor: Colors.white,
+        ),
       ),
     );
   }
