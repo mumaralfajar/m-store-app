@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maru_store_app/widgets/fake_search.dart';
 
+import '../categories/men_categ.dart';
+
 List<ItemsData> items = [
   ItemsData(label: 'Men'),
   ItemsData(label: 'Women'),
@@ -21,6 +23,19 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
+  final PageController _pageController = PageController();
+
+  @override
+  void initState() {
+    for (var element in items) {
+      element.isSelected = false;
+    }
+    setState(() {
+      items[0].isSelected = true;
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -48,12 +63,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
-                for (var element in items) {
-                  element.isSelected = false;
-                }
-                setState(() {
-                  items[index].isSelected = true;
-                });
+                _pageController.animateToPage(index,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.bounceIn);
               },
               child: Container(
                 color: items[index].isSelected == true
@@ -81,6 +93,29 @@ class _CategoryScreenState extends State<CategoryScreen> {
       height: size.height * 0.821,
       width: size.width * 0.8,
       color: Colors.white,
+      child: PageView(
+        controller: _pageController,
+        onPageChanged: (value) {
+          for (var element in items) {
+            element.isSelected = false;
+          }
+          setState(() {
+            items[value].isSelected = true;
+          });
+        },
+        scrollDirection: Axis.vertical,
+        children: const [
+          MenCategory(),
+          Center(child: Text('Women Category')),
+          Center(child: Text('Shoes Category')),
+          Center(child: Text('Bags Category')),
+          Center(child: Text('Electronics Category')),
+          Center(child: Text('Accessories Category')),
+          Center(child: Text('Home & Garden Category')),
+          Center(child: Text('Kids Category')),
+          Center(child: Text('Beauty Category')),
+        ],
+      ),
     );
   }
 }
