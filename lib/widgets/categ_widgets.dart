@@ -23,30 +23,20 @@ class SliderBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const Text(
-                  ' << ',
-                  style: TextStyle(
-                      color: Colors.brown,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 10),
-                ),
-                Text(
-                  maincategName.toUpperCase(),
-                  style: const TextStyle(
-                      color: Colors.brown,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 10),
-                ),
-                const Text(
-                  ' >> ',
-                  style: TextStyle(
-                      color: Colors.brown,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 10),
-                ),
+                maincategName == 'beauty'
+                    ? const Text('')
+                    : const Text(' << ', style: style),
+                Text(maincategName.toUpperCase(), style: style),
+                maincategName == 'men'
+                    ? const Text('')
+                    : const Text(
+                        ' >> ',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 10),
+                      ),
               ],
             ),
           ),
@@ -55,6 +45,12 @@ class SliderBar extends StatelessWidget {
     );
   }
 }
+
+const style = TextStyle(
+    color: Colors.black,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 10);
 
 class SubcategModel extends StatelessWidget {
   final String mainCategName;
@@ -92,7 +88,10 @@ class SubcategModel extends StatelessWidget {
               image: AssetImage(assetName),
             ),
           ),
-          Text(subCategLabel)
+          Text(
+            subCategLabel,
+            style: const TextStyle(fontSize: 11),
+          )
         ],
       ),
     );

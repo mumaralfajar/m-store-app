@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:maru_store_app/categories/accessories_categ.dart';
+import 'package:maru_store_app/categories/bags_categ.dart';
+import 'package:maru_store_app/categories/beauty_categ.dart';
+import 'package:maru_store_app/categories/electronics_categ.dart';
+import 'package:maru_store_app/categories/home_garden_categ.dart';
+import 'package:maru_store_app/categories/kids_categ.dart';
+import 'package:maru_store_app/categories/shoes_categ.dart';
+import 'package:maru_store_app/categories/women_categ.dart';
 import 'package:maru_store_app/widgets/fake_search.dart';
 
 import '../categories/men_categ.dart';
@@ -106,14 +114,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
         scrollDirection: Axis.vertical,
         children: const [
           MenCategory(),
-          Center(child: Text('Women Category')),
-          Center(child: Text('Shoes Category')),
-          Center(child: Text('Bags Category')),
-          Center(child: Text('Electronics Category')),
-          Center(child: Text('Accessories Category')),
-          Center(child: Text('Home & Garden Category')),
-          Center(child: Text('Kids Category')),
-          Center(child: Text('Beauty Category')),
+          WomenCategory(),
+          ShoesCategory(),
+          BagsCategory(),
+          ElectronicsCategory(),
+          AccessoriesCategory(),
+          HomeGardenCategory(),
+          KidsCategory(),
+          BeautyCategory(),
         ],
       ),
     );
