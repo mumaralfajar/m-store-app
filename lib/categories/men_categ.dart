@@ -9,7 +9,7 @@ class MenCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(2.0),
       child: Stack(
         children: [
           Positioned(
@@ -27,8 +27,8 @@ class MenCategory extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.68,
                     child: GridView.count(
-                      mainAxisSpacing: 64,
-                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 48,
+                      crossAxisSpacing: 8,
                       crossAxisCount: 3,
                       children: List.generate(men.length, (index) {
                         return SubcategModel(
