@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.maru_store_app">
    <application
-        android:label="maru_store_app"
+        android:label="M Store"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

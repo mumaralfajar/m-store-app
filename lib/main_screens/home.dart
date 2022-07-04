@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../widgets/fake_search.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,8 +19,9 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.black,
           title: const FakeSearch(),
           bottom: const TabBar(
+            indicatorColor: Colors.blue,
             isScrollable: true,
-            indicatorWeight: 4,
+            indicatorWeight: 8,
             tabs: [
               RepeatedTabs(label: 'Men'),
               RepeatedTabs(label: 'Women'),

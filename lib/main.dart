@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maru_store_app/main_screens/customer_home.dart';
 
-void main(List<String> args) {
+void main() {
   runApp(const MyApp());
 }
 

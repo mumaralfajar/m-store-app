@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:maru_store_app/main_screens/customer_home.dart';
-import 'package:maru_store_app/main_screens/home.dart';
 
 import '../widgets/appbar_widgets.dart';
 import '../widgets/blue_button.dart';
