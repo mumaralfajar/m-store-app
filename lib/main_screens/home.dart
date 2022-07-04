@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
           bottom: const TabBar(
             indicatorColor: Colors.blue,
             isScrollable: true,
-            indicatorWeight: 8,
+            indicatorWeight: 4,
             tabs: [
               RepeatedTabs(label: 'Men'),
               RepeatedTabs(label: 'Women'),
